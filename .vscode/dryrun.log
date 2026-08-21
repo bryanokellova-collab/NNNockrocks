@@ -1,0 +1,16 @@
+make.exe --dry-run --keep-going --print-directory
+make: Entering directory 'c:/Users/Fungi/Documents/Nockrocks'
+git config --global user.name "Fungi"
+git config --global user.email "bryanokellova@gmail.com"
+git add .
+git commit -m "Auto-commit and publish assets before build" || echo "No changes to commit"
+git push origin main || echo "Push failed or already up to date"
+ 
+if not exist "Build" mkdir "Build"
+gcc -Isrc -O2 -c src/games.c -o Build/games.o
+ 
+gcc  Build/launch.o  Build/games.o  Build/Home.o  Build/banscreen.o  Build/globals.o Build/icon.o -o Build/Nockrocks.exe -Lsrc -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
+if exist "src\raylib.dll" copy "src\raylib.dll" "Build\"
+if exist "Assets" xcopy /E /I /Y "Assets" "Build\Assets"
+make: Leaving directory 'c:/Users/Fungi/Documents/Nockrocks'
+ 

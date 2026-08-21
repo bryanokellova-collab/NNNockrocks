@@ -1,0 +1,1 @@
+gcc launch.c -o launch -lraylib -lopengl32 -lgdi32 -lwinmm

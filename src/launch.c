@@ -28,7 +28,7 @@ static void SyncAssetsFromGitHub(void) {
     const char *cmd = "powershell -WindowStyle Hidden -Command \""
         "$ErrorActionPreference = 'Stop';"
         "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;"
-        "$url = 'https://github.com/bryanokellova-collab/NNNockrocks/raw/main/Assets';"
+        "$url = 'https://github.com/bryanokellova-collab/NNNockrocks/raw/main/Assets.zip';"
         "$output = 'Assets.zip';"
         "try {"
         "    Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing;"

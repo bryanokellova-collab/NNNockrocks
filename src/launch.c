@@ -8,7 +8,7 @@
 
 #define MAX_USERS 150
 #define MAX_CHARS 32
-#define USERS_FILE "users.dat"
+#define USERS_FILE "users.bin"
 
 typedef struct {
     char username[MAX_CHARS];
@@ -23,24 +23,7 @@ static char passwordText[MAX_CHARS] = "\0";
 static bool usernameEditMode = false;
 static bool passwordEditMode = false;
 
-// 100% Fail-Safe Asset Sync with TLS security, error trapping, and verification
-static void SyncAssetsFromGitHub(void) {
-    const char *cmd = "powershell -WindowStyle Hidden -Command \""
-        "$ErrorActionPreference = 'Stop';"
-        "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;"
-        "$url = 'https://github.com/bryanokellova-collab/NNNockrocks/tree/main/Assets';" // downl
-        "$output = 'Assets.zip';"
-        "try {"
-        "    Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing;"
-        "    if (Test-Path $output) {"
-        "        Expand-Archive -Path $output -DestinationPath '.' -Force;"
-        "        Remove-Item $output -ErrorAction SilentlyContinue;"
-        "    }"
-        "} catch {}"
-    "\"";
-    
-    system(cmd);
-}
+
 
 static void LoadUsers(void) {
     FILE *file = fopen(USERS_FILE, "rb");
@@ -78,12 +61,12 @@ void CheckIfKeysArePressed(void) {
 }
 
 static void LoadAppIconAndTextures(void) { 
-    Image logoImg = LoadImage("Assets/logo.png");
+    Image logoImg = LoadImage("logo.png");
     if (logoImg.data != NULL) {
         SetWindowIcon(logoImg);
         UnloadImage(logoImg); 
     }
-    logoTexture = LoadTexture("Assets/logo.png");
+    logoTexture = LoadTexture("logo.png");
 }
 
 void DrawLoginPanel(void) {
@@ -137,8 +120,6 @@ void DrawLoginPanel(void) {
 }
 
 int main(void) {
-    // 100% Safe sync: Downloads, tests integrity, extracts, and cleans up completely silently
-    SyncAssetsFromGitHub();
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(900, 900, "Nockrocks");
@@ -149,7 +130,7 @@ int main(void) {
     LoadUsers(); 
     LoadAppIconAndTextures(); 
 
-    PlayerDefaultAvatar = LoadTexture("Assets/Dav.png");
+    PlayerDefaultAvatar = LoadTexture("Dav.png");
     PlayerDefaultAvatar.height = 150;
     PlayerDefaultAvatar.width = 150;
     
@@ -159,7 +140,7 @@ int main(void) {
         
         // home.c now handles all state logic and drawing
         HandleAppScreens(); 
-    }
+    } 
     
     UnloadResources();
     CloseWindow();

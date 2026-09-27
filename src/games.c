@@ -43,7 +43,7 @@ void GameAntiCheat() {
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value");
+        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value , Unknown behaviour ");
 
         LoadBanScreen(BanReasonGlobal);
     }
@@ -81,7 +81,7 @@ void CheckKeybindsFunc() {
     }
     
     if (IsKeyDown(KEY_M)) {
-        speed = 50;
+        speed = 599;
     }
 
 

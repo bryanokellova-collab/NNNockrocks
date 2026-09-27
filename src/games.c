@@ -18,92 +18,103 @@ void GamePanel(void) {
     }
 }
 
-void UpdateMouseFunc(void) {
+void UpdateMouseFunc() {
     Vector2 mousePos = GetMousePosition();
     Camera2D PlayerCamera = { 0 };
     PlayerCamera.target = mousePos; 
 }
 
-void GameAntiCheat(void) {
-    if (speed >= 50.0f) {
+void GameAntiCheat() {
+    
+    if(speed >= 50){
+
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected Speed overflow");
         snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Speed Hacks");
 
-        LoadBanScreen(BanTitle, BanReasonGlobal);
+        LoadBanScreen(BanReasonGlobal);
     }
-    else if (speed <= -1.0f) {
+    
+    
+
+    else if(speed <= -1) {
+
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected behaviour");
-        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value");
+        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value , Unknown behaviour");
 
-        LoadBanScreen(BanTitle, BanReasonGlobal);
+        LoadBanScreen(BanReasonGlobal);
     }
+
 }
 
-void CheckKeybindsFunc(void) {
-    if (AvatarPosition.x > GetScreenWidth()) {
-        AvatarPosition.x = -100.0f;
-        speed = 0.0f;
+
+
+
+
+void CheckKeybindsFunc() {
+    if(AvatarPosition.x > GetScreenWidth()) {
+        AvatarPosition.x = -100;
+        speed = 0;
     } 
-    else if (AvatarPosition.x < -100.0f) {
-        AvatarPosition.x = (float)GetScreenWidth();
-        speed = 0.0f;
+    else if (AvatarPosition.x < -100) {
+        AvatarPosition.x = GetScreenWidth();
+        speed = 0;
     }
 
-    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) {
-        AvatarPosition.x += speed;
+    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)){
+         AvatarPosition.x += speed;
     }
     if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) { 
         AvatarPosition.x -= speed;
     }
-    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) {
-        AvatarPosition.y -= speed;
+    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))  {
+          AvatarPosition.y -= speed;
     }
     if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
-        AvatarPosition.y += speed;
+         AvatarPosition.y += speed;
     }
     if (IsKeyPressed(KEY_SPACE)) {
-        AvatarPosition.y -= 99.0f; 
+        AvatarPosition.y -= 99; 
     }
     
     if (IsKeyDown(KEY_M)) {
-        speed = -5.0f;
+        speed = 599;
     }
+
+
+
+
 }
 
 void UpdateGame(void) {
-    // 1. Process Anti-Cheat Checks
+
     GameAntiCheat();
 
-    // 2. Process Input & Positions
-    if (showGame) {
-        CheckKeybindsFunc();
-        UpdateMouseFunc();
-    }
+    UpdateMouseFunc();
 
-    // 3. Render Visuals
-    DrawingFunc();
+    GameAntiCheat();
+
+
 }
 
-void DrawingFunc(void) {
-    // Draw texture only if it has been properly loaded into memory
-    if (showGame) {
-        if (PlayerDefaultAvatar.id > 0) {
-            DrawTextureV(PlayerDefaultAvatar, AvatarPosition, WHITE);
-        } else {
-            // Placeholder rectangle if texture isn't loaded yet
-            DrawRectangleV(AvatarPosition, (Vector2){ 32, 32 }, RED);
-        }
+void DrawingFunc() {
+    CheckKeybinds = true;
+
+    if (showGame == true) {
+        DrawTextureV(PlayerDefaultAvatar, AvatarPosition, WHITE);
+    }
+    if(CheckKeybinds == true) {
+        CheckKeybindBool = true;
+    }
+    if(CheckKeybindBool == true) {
+        CheckKeybindsFunc();
     }
     
-    // UI Navigation Button
     Rectangle HomebuttonBounds = { 10.0f, 10.0f, 120.0f, 30.0f };
-    if (GuiButton(HomebuttonBounds, " <- Leave")) {
+    if(GuiButton(HomebuttonBounds," <- Leave")) {
         showGame = false;
         showHome = true;
     }

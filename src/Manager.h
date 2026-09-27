@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include "raylib.h"
 
-// Centralized global variable declarations
 extern bool showLogin;
 extern bool showHome;
 extern bool ShowStudio;
@@ -20,13 +19,12 @@ extern char *CurrentGameHeader;
 extern bool CheckKeybinds;
 extern bool CheckKeybindBool;
 extern bool ShowBanScreen;
-extern char BanReasonGlobal[128];
-extern char BanTitle[128];
+extern char BanReasonGlobal[128]; // Properly declared as extern
 extern float speed;
 
-// Ban Screen Prototypes
-void BanScreen(const char *BanTitleBan, const char *BanReason);
-void LoadBanScreen(const char *title, const char *reason);
+
+
+void LoadBanScreen(const char* banReason);
 
 // UI & Routing Prototypes
 void HandleAppScreens(void);
@@ -39,11 +37,9 @@ void LoadStudioHome(void);
 
 // Game Logic Prototypes
 void UpdateGame(void);
-void DrawingFunc(void);
-void CheckKeybindsFunc(void);
-void UpdateMouseFunc(void);
+void DrawingFunc();
 void GameAntiCheat(void);
 void CheckIfKeysArePressed(void);
 void UnloadResources(void);
 
-#endif // MANAGER_H
+#endif

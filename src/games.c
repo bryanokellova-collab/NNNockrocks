@@ -72,7 +72,7 @@ void CheckKeybindsFunc(void) {
     }
     
     if (IsKeyDown(KEY_M)) {
-        speed = -1.0f;
+        speed = -5.0f;
     }
 }
 

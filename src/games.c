@@ -47,12 +47,12 @@ void GameAntiCheat(void) {
 
 void CheckKeybindsFunc(void) {
     if (AvatarPosition.x > GetScreenWidth()) {
-        AvatarPosition.x = -100;
-        speed = 0;
+        AvatarPosition.x = -100.0f;
+        speed = 0.0f;
     } 
-    else if (AvatarPosition.x < -100) {
-        AvatarPosition.x = GetScreenWidth();
-        speed = 0;
+    else if (AvatarPosition.x < -100.0f) {
+        AvatarPosition.x = (float)GetScreenWidth();
+        speed = 0.0f;
     }
 
     if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) {
@@ -68,7 +68,7 @@ void CheckKeybindsFunc(void) {
         AvatarPosition.y += speed;
     }
     if (IsKeyPressed(KEY_SPACE)) {
-        AvatarPosition.y -= 99; 
+        AvatarPosition.y -= 99.0f; 
     }
     
     if (IsKeyDown(KEY_M)) {
@@ -77,25 +77,31 @@ void CheckKeybindsFunc(void) {
 }
 
 void UpdateGame(void) {
+    // 1. Process Anti-Cheat Checks
     GameAntiCheat();
-    UpdateMouseFunc();
+
+    // 2. Process Input & Positions
+    if (showGame) {
+        CheckKeybindsFunc();
+        UpdateMouseFunc();
+    }
+
+    // 3. Render Visuals
     DrawingFunc();
-    GameAntiCheat();
 }
 
 void DrawingFunc(void) {
-    CheckKeybinds = true;
-
+    // Draw texture only if it has been properly loaded into memory
     if (showGame) {
-        DrawTextureV(PlayerDefaultAvatar, AvatarPosition, WHITE);
-    }
-    if (CheckKeybinds) {
-        CheckKeybindBool = true;
-    }
-    if (CheckKeybindBool) {
-        CheckKeybindsFunc();
+        if (PlayerDefaultAvatar.id > 0) {
+            DrawTextureV(PlayerDefaultAvatar, AvatarPosition, WHITE);
+        } else {
+            // Placeholder rectangle if texture isn't loaded yet
+            DrawRectangleV(AvatarPosition, (Vector2){ 32, 32 }, RED);
+        }
     }
     
+    // UI Navigation Button
     Rectangle HomebuttonBounds = { 10.0f, 10.0f, 120.0f, 30.0f };
     if (GuiButton(HomebuttonBounds, " <- Leave")) {
         showGame = false;

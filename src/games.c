@@ -31,9 +31,11 @@ void GameAntiCheat() {
         ShowBanScreen = true;
         showGame = false;
 
+        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected Speed overflow ");
+
         snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Speed Hacks");
 
-        LoadBanScreen(BanReasonGlobal);
+        LoadBanScreen(BanTitle,BanReasonGlobal);
     }
     
     
@@ -43,9 +45,11 @@ void GameAntiCheat() {
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value , Unknown behaviour ");
+        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected behaviour  ");
 
-        LoadBanScreen(BanReasonGlobal);
+        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value ");
+
+        LoadBanScreen(BanTitle,BanReasonGlobal);
     }
 
 }
@@ -94,6 +98,8 @@ void UpdateGame(void) {
     GameAntiCheat();
 
     UpdateMouseFunc();
+
+    DrawingFunc();
 
     GameAntiCheat();
 

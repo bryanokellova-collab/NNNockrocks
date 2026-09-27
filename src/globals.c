@@ -12,5 +12,6 @@ char  *CurrentGameHeader = "";
 bool CheckKeybindBool = false;
 bool ShowBanScreen = false;
 char BanReasonGlobal[128] = "Unknown violation";
+char BanTitle[128] = "";
 char ProjectName[128] = "";
 bool ShowCodeEditor = false;

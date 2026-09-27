@@ -20,11 +20,12 @@ extern bool CheckKeybinds;
 extern bool CheckKeybindBool;
 extern bool ShowBanScreen;
 extern char BanReasonGlobal[128]; // Properly declared as extern
+extern char BanTitle[128];
 extern float speed;
 
 
 
-void LoadBanScreen(const char* banReason);
+void LoadBanScreen(const char BanTitleBan,char *BanReason);
 
 // UI & Routing Prototypes
 void HandleAppScreens(void);

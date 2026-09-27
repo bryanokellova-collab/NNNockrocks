@@ -4,7 +4,7 @@
 #include "Manager.h"
 #include "raygui.h"
 
-void BanScreen(const char *BanReason) {
+void BanScreen(const char BanTitleBan,char *BanReason) {
     DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), (Color){ 20, 20, 20, 255 });
 
     int boxWidth = 560;
@@ -19,7 +19,7 @@ void BanScreen(const char *BanReason) {
     DrawText("Disconnected", boxX + 20, boxY + 18, 28, WHITE);
 
     DrawText("You have been banned.", boxX + 25, boxY + 85, 20, WHITE);
-    DrawText("Reason: Exploiting / Unexpected client behavior", boxX + 25, boxY + 125, 16, (Color){ 180, 180, 180, 255 });
+    DrawText(BanTitleBan, boxX + 25, boxY + 125, 16, (Color){ 180, 180, 180, 255 });
     
     char codeBuffer[128];
     snprintf(codeBuffer, sizeof(codeBuffer), "Details: %s", BanReason);

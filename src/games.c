@@ -18,48 +18,35 @@ void GamePanel(void) {
     }
 }
 
-void UpdateMouseFunc() {
+void UpdateMouseFunc(void) {
     Vector2 mousePos = GetMousePosition();
     Camera2D PlayerCamera = { 0 };
     PlayerCamera.target = mousePos; 
 }
 
-void GameAntiCheat() {
-    
-    if(speed >= 50){
-
+void GameAntiCheat(void) {
+    if (speed >= 50.0f) {
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected Speed overflow ");
-
+        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected Speed overflow");
         snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Speed Hacks");
 
-        LoadBanScreen(BanTitle,BanReasonGlobal);
+        LoadBanScreen(BanTitle, BanReasonGlobal);
     }
-    
-    
-
-    else if(speed <= -1) {
-
+    else if (speed <= -1.0f) {
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected behaviour  ");
+        snprintf(BanTitle, sizeof(BanTitle), "%s", "Unexpected behaviour");
+        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value");
 
-        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value ");
-
-        LoadBanScreen(BanTitle,BanReasonGlobal);
+        LoadBanScreen(BanTitle, BanReasonGlobal);
     }
-
 }
 
-
-
-
-
-void CheckKeybindsFunc() {
-    if(AvatarPosition.x > GetScreenWidth()) {
+void CheckKeybindsFunc(void) {
+    if (AvatarPosition.x > GetScreenWidth()) {
         AvatarPosition.x = -100;
         speed = 0;
     } 
@@ -68,59 +55,49 @@ void CheckKeybindsFunc() {
         speed = 0;
     }
 
-    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)){
-         AvatarPosition.x += speed;
+    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) {
+        AvatarPosition.x += speed;
     }
     if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) { 
         AvatarPosition.x -= speed;
     }
-    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))  {
-          AvatarPosition.y -= speed;
+    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) {
+        AvatarPosition.y -= speed;
     }
     if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
-         AvatarPosition.y += speed;
+        AvatarPosition.y += speed;
     }
     if (IsKeyPressed(KEY_SPACE)) {
         AvatarPosition.y -= 99; 
     }
     
     if (IsKeyDown(KEY_M)) {
-        speed = -1;
+        speed = -1.0f;
     }
-
-
-
-
 }
 
 void UpdateGame(void) {
-
     GameAntiCheat();
-
     UpdateMouseFunc();
-
     DrawingFunc();
-
     GameAntiCheat();
-
-
 }
 
-void DrawingFunc() {
+void DrawingFunc(void) {
     CheckKeybinds = true;
 
-    if (showGame == true) {
+    if (showGame) {
         DrawTextureV(PlayerDefaultAvatar, AvatarPosition, WHITE);
     }
-    if(CheckKeybinds == true) {
+    if (CheckKeybinds) {
         CheckKeybindBool = true;
     }
-    if(CheckKeybindBool == true) {
+    if (CheckKeybindBool) {
         CheckKeybindsFunc();
     }
     
     Rectangle HomebuttonBounds = { 10.0f, 10.0f, 120.0f, 30.0f };
-    if(GuiButton(HomebuttonBounds," <- Leave")) {
+    if (GuiButton(HomebuttonBounds, " <- Leave")) {
         showGame = false;
         showHome = true;
     }

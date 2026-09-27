@@ -4,7 +4,7 @@
 #include "Manager.h"
 #include "raygui.h"
 
-void BanScreen(const char BanTitleBan,char *BanReason) {
+void BanScreen(const char *BanTitleBan, const char *BanReason) {
     DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), (Color){ 20, 20, 20, 255 });
 
     int boxWidth = 560;
@@ -28,11 +28,12 @@ void BanScreen(const char BanTitleBan,char *BanReason) {
     DrawLine(boxX + 25, boxY + 200, boxX + boxWidth - 25, boxY + 200, (Color){ 70, 70, 70, 255 });
 
     if (GuiButton((Rectangle){ (float)(boxX + 25), (float)(boxY + 230), (float)(boxWidth - 50), (float)45 }, "OK")) {
+        ShowBanScreen = false;
         showGame = false;
         showHome = true;
     }
 }
 
-void LoadBanScreen(const char *BanReason) {
-    BanScreen(BanReason);
+void LoadBanScreen(const char *title, const char *reason) {
+    BanScreen(title, reason);
 }

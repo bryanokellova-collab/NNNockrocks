@@ -43,9 +43,10 @@ void GameAntiCheat() {
         ShowBanScreen = true;
         showGame = false;
 
-        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value");
+        snprintf(BanReasonGlobal, sizeof(BanReasonGlobal), "%s", "Negative speed value ");
 
         LoadBanScreen(BanReasonGlobal);
+
     }
 
 }
@@ -95,7 +96,7 @@ void UpdateGame(void) {
 
     UpdateMouseFunc();
 
-    DrawingFunc();
+    
 
     GameAntiCheat();
 

@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 21 17:55:28 2026
+# Make data base, printed on Sun Sep 27 08:05:46 2026
 
 # Variables
 
@@ -15,7 +15,7 @@ SYSTEMDRIVE = C:
 # environment
 LC_ALL = C
 # environment
-MXC_BIN_DIR = c:\Users\Fungi\AppData\Local\Programs\Microsoft VS Code\110a328ea5\resources\app\node_modules.asar.unpacked\@microsoft\mxc-sdk\bin
+MXC_BIN_DIR = c:\Users\Fungi\AppData\Local\Programs\Microsoft VS Code\a44adf7f53\resources\app\node_modules.asar.unpacked\@microsoft\mxc-sdk\bin
 # environment
 USERPROFILE = C:\Users\Fungi
 # environment
@@ -29,8 +29,7 @@ VSCODE_CWD = C:\Users\Fungi\AppData\Local\Programs\Microsoft VS Code
 # environment
 SYSTEMROOT = C:\WINDOWS
 # makefile (from 'Makefile', line 19)
-LIBS = -L$(SRC_DIR) -lraylib -lopengl32 -lgdi32 -lwinmm -mwind 
-ows
+LIBS = -L$(SRC_DIR) -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
 # environment
 PROCESSOR_LEVEL = 6
 # environment
@@ -40,7 +39,7 @@ MAKE_COMMAND := make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3012_BCRREMCEVYCUDEQI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_18724_HACRRBHOWAHZTXBH
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -52,7 +51,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Fungi\AppData\Roaming\Code\CachedData\110a328ea54b42367b803ec53ee0bf52ef26b419
+VSCODE_CODE_CACHE_PATH = C:\Users\Fungi\AppData\Roaming\Code\CachedData\a44adf7f53e00964ab890f9f8758a334f1fc15bc
 # environment
 LANG = C
 # default
@@ -62,21 +61,21 @@ TMP = C:\Users\Fungi\AppData\Local\Temp
 # default
 .INCLUDE_DIRS := .
 # environment
-EFC_6916_4126798990 = 1
-# environment
 PROCESSOR_ARCHITEW6432 = AMD64
 # makefile
 MAKEFLAGS = pqrR
 # environment
-ONEDRIVE = C:\Users\Fungi\OneDrive
+EFC_13844_4126798990 = 1
 # environment
-EFC_6916_1592913036 = 1
+ONEDRIVE = C:\Users\Fungi\OneDrive
 # makefile
-CURDIR := c:/Users/Fungi/Documents/Nockrocks
+CURDIR := c:/Users/Fungi/OneDrive/Documents/Nockrocks
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # makefile (from 'Makefile', line 9)
 SRCS = $(SRC_DIR)/launch.c $(SRC_DIR)/games.c $(SRC_DIR)/Home.c $(SRC_DIR)/banscreen.c $(SRC_DIR)/globals.c
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -98,7 +97,7 @@ RESOURCE_OBJ = $(BUILD_DIR)/icon.o
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3012
+VSCODE_PID = 18724
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -106,7 +105,9 @@ VSCODE_PID = 3012
 # automatic
 <D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
-VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-gb","resolvedLanguage":"en","defaultMessagesFile":"C:\\Users\\Fungi\\AppData\\Local\\Programs\\Microsoft VS Code\\110a328ea5\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
+EFC_13844_1592913036 = 1
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-gb","resolvedLanguage":"en","defaultMessagesFile":"C:\\Users\\Fungi\\AppData\\Local\\Programs\\Microsoft VS Code\\a44adf7f53\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
 # environment
 ONEDRIVECONSUMER = C:\Users\Fungi\OneDrive
 # default
@@ -132,7 +133,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\MinGW\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Users\Fungi\.cargo\bin;C:\Users\Fungi\scoop\shims;C:\Users\Fungi\AppData\Local\Microsoft\WindowsApps;C:\Users\Fungi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Fungi\AppData\Local\Microsoft\WindowsApps;C:\Users\Fungi\AppData\Local\Microsoft\WinGet\Packages\ezwinports.make_Microsoft.Winget.Source_8wekyb3d8bbwe\bin;C:\Users\Fungi\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;C:\Program Files\LLVM\bin;C:\Users\Fungi\AppData\Local\bin\NASM;C:\Users\Fungi\Documents\DoorsOs\gdisk;C:\Users\Fungi\AppData\Local\Python\bin
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\MinGW\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\Fungi\.cargo\bin;C:\Users\Fungi\scoop\shims;C:\Users\Fungi\AppData\Local\Microsoft\WindowsApps;C:\Users\Fungi\AppData\Local\Microsoft\WindowsApps;C:\Users\Fungi\AppData\Local\Microsoft\WinGet\Packages\ezwinports.make_Microsoft.Winget.Source_8wekyb3d8bbwe\bin;C:\Users\Fungi\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;C:\Program Files\LLVM\bin;C:\Users\Fungi\AppData\Local\bin\NASM;C:\Users\Fungi\Documents\DoorsOs\gdisk;C:\Users\Fungi\AppData\Local\Python\bin;C:\Users\Fungi\AppData\Local\Programs\Microsoft VS Code\bin
 # environment
 COMPUTERNAME = DESKTOP-L8OIBV5
 # default
@@ -163,8 +164,6 @@ USERDOMAIN = DESKTOP-L8OIBV5
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
-# environment
-__COMPAT_LAYER = DetectorsAppHealth
 # makefile
 .DEFAULT_GOAL := all
 # default
@@ -184,6 +183,8 @@ CFLAGS = -I$(SRC_DIR) -O2
 # environment
 HOMEDRIVE = C:
 # environment
+EFC_13844_344590478 = 1
+# environment
 PROCESSOR_ARCHITECTURE = x86
 # makefile (from 'Makefile', line 13)
 ICON_FILE = logo.ico
@@ -198,7 +199,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\Fungi\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\9a29d8e5-1.134.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\9a29d8e5-1.136.1-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -222,7 +223,7 @@ VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=15/156=10%
+# Load=106/1024=10%, Rehash=0, Collisions=16/157=10%
 
 # Pattern-specific Variable Values
 
@@ -230,8 +231,8 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
 
 # Directories
 
-# src (key c:/Users/Fungi/Documents/Nockrocks/src, mtime 1786611383): No files, no impossibilities so far.
-# . (key c:/Users/Fungi/Documents/Nockrocks, mtime 1787330856): 16 files, no impossibilities.
+# src (key c:/Users/Fungi/OneDrive/Documents/Nockrocks/src, mtime 1788543542): No files, no impossibilities so far.
+# . (key c:/Users/Fungi/OneDrive/Documents/Nockrocks, mtime 1788543542): 16 files, no impossibilities.
 
 # 16 files, no impossibilities in 2 directories.
 
@@ -401,12 +402,12 @@ git-commit:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 300 B / avg = 9 B
-# current buf: size = 8174 B / used = 300 B / count = 33 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 313 B / avg = 9 B
+# current buf: size = 8174 B / used = 313 B / count = 34 / avg = 9 B
 
-# strcache performance: lookups = 60 / hit rate = 45%
+# strcache performance: lookups = 60 / hit rate = 43%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/60=0%
-# Finished Make data base on Fri Aug 21 17:55:28 2026
+# Load=34/8192=0%, Rehash=0, Collisions=0/60=0%
+# Finished Make data base on Sun Sep 27 08:05:46 2026
 
  

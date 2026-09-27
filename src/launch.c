@@ -117,6 +117,7 @@ void DrawLoginPanel(void) {
             showHome = true;
         }
     }
+
 }
 
 int main(void) {

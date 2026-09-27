@@ -81,7 +81,7 @@ void CheckKeybindsFunc() {
     }
     
     if (IsKeyDown(KEY_M)) {
-        speed = 599;
+        speed = -1;
     }
 
 
